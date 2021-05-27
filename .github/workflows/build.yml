@@ -19,11 +19,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and Push Image
-        uses: docker/build-push-action@v2
-        with:
-          context: ./windows
-          push: true
-          tags: calebjstewart/pwncat-testing:windows
+        working-directory: ./windows
+        run: |
+          docker build -t calebjstewart/pwncat-testing:windows .
+          docker image push calebjstewart/pwncat-testing:windows
 
   linux:
     runs-on: ubuntu-latest
