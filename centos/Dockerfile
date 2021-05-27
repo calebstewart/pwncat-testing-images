@@ -19,4 +19,8 @@ RUN chmod 600 /home/caleb/.ssh/authorized_keys
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
+# Copy reverse shell script
+COPY reverse.sh /reverse.sh
+RUN chmod +x /reverse.sh
+
 ENTRYPOINT ["/start.sh"]
