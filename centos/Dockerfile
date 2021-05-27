@@ -23,4 +23,8 @@ RUN chmod +x /start.sh
 COPY reverse.sh /reverse.sh
 RUN chmod +x /reverse.sh
 
+expose 22
+expose 9999
+expose 4444
+
 ENTRYPOINT ["/start.sh"]
