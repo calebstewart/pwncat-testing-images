@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt-get update -y && apt-get -y install socat openssh-server sudo
+RUN apt-get update -y && apt-get -y install socat openssh-server sudo python3
 
 # Create "privilege separation directory"
 RUN mkdir -p /run/sshd

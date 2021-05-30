@@ -1,6 +1,6 @@
 FROM centos:7
 
-RUN yum -y install socat openssh-server sudo initscripts
+RUN yum -y install socat openssh-server sudo initscripts python3 which
 
 # Generate host keys
 RUN sshd-keygen
